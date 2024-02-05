@@ -16,7 +16,7 @@ class Homepage extends StatelessWidget {
         children: [
           SideBar(),
           Expanded(
-              flex: 30,
+              flex: 32,
               child: Obx(() => vcontroller.pages[vcontroller.count.value])),
         ],
       ),
@@ -24,7 +24,7 @@ class Homepage extends StatelessWidget {
   }
 
   Expanded SideBar() {
-    var hover_color = Color.fromARGB(115, 105, 120, 202);
+    var hoverColor = const Color.fromARGB(115, 105, 120, 202);
 
     return Expanded(
       flex: 1,
@@ -35,7 +35,7 @@ class Homepage extends StatelessWidget {
               Tooltip(
                 message: "Home",
                 child: ListTile(
-                  hoverColor: hover_color,
+                  hoverColor: hoverColor,
                   onTap: () => vcontroller.count.value = 0,
                   selected: vcontroller.count.value == 0,
                   contentPadding:
@@ -46,7 +46,7 @@ class Homepage extends StatelessWidget {
               Tooltip(
                 message: "Frota",
                 child: ListTile(
-                  hoverColor: hover_color,
+                  hoverColor: hoverColor,
                   onTap: () => vcontroller.count.value = 1,
                   selected: vcontroller.count.value == 1,
                   contentPadding:
@@ -60,7 +60,7 @@ class Homepage extends StatelessWidget {
               Tooltip(
                 message: "Motoristas",
                 child: ListTile(
-                  hoverColor: hover_color,
+                  hoverColor: hoverColor,
                   onTap: () => vcontroller.count.value = 2,
                   selected: vcontroller.count.value == 2,
                   contentPadding:
@@ -74,7 +74,7 @@ class Homepage extends StatelessWidget {
               Tooltip(
                 message: "Peças",
                 child: ListTile(
-                  hoverColor: hover_color,
+                  hoverColor: hoverColor,
                   onTap: () => vcontroller.count.value = 0,
                   selected: vcontroller.count.value == 3,
                   contentPadding:
