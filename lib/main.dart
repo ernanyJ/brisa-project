@@ -1,4 +1,4 @@
-import 'package:brisa_project/sidebar.dart';
+import 'package:brisa_project/widgets/SideBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "LocalizaCar",
+      title: "Brisa-Project",
       debugShowCheckedModeBanner: false,
       home: Homepage(),
     );

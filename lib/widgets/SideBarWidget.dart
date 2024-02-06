@@ -1,8 +1,7 @@
-import 'package:brisa_project/view/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'controllers/ContentController.dart';
+import '../controllers/ContentController.dart';
 
 Vcontroller vcontroller = Get.put(Vcontroller());
 
