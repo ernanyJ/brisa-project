@@ -9,38 +9,42 @@ class CarCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        color: Color.fromARGB(242, 255, 255, 255),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              vehicle.modelo,
-              style: GoogleFonts.roboto(
-                textStyle: Theme.of(context).textTheme.displayLarge,
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+    return Stack(
+      children: [
+        Container(
+          margin: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            color: Color.fromARGB(242, 255, 255, 255),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Text(
-              "Placa: ${vehicle.placa}",
-              style: GoogleFonts.roboto(
-                fontSize: 13,
-                fontWeight: FontWeight.w400,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  vehicle.modelo,
+                  style: GoogleFonts.roboto(
+                    textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "Placa: ${vehicle.placa}",
+                  style: GoogleFonts.roboto(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
