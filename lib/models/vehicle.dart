@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Vehicle {
+  String image;
   String modelo;
   Color cor;
   String placa;
@@ -17,6 +18,7 @@ class Vehicle {
   bool alugado;
 
   Vehicle({
+    required this.image,
     required this.modelo,
     required this.cor,
     required this.placa,

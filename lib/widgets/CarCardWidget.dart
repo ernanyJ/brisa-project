@@ -3,21 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CarCard extends StatelessWidget {
-  final Vehicle vehicle;
+  Vehicle vehicle;
+  late String image;
 
-  const CarCard({super.key, required this.vehicle});
+  CarCard({super.key, required this.vehicle, required String? image});
+
+  CarCard.withImage(this.vehicle, this.image);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          margin: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: Color.fromARGB(242, 255, 255, 255),
+    return Container(
+      margin: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: const Color.fromARGB(242, 255, 255, 255),
+      ),
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: const Color.fromARGB(255, 218, 218, 218),
+              ),
+              margin: const EdgeInsets.only(left: 92, top: 10),
+              child: Image.asset(
+                image,
+              ),
+            ),
           ),
-          child: Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -37,14 +53,14 @@ class CarCard extends StatelessWidget {
                   "Placa: ${vehicle.placa}",
                   style: GoogleFonts.roboto(
                     fontSize: 13,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

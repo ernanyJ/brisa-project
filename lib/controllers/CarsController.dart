@@ -26,6 +26,7 @@ class CarsController {
 
 final List<Vehicle> vehicleList = [
   Vehicle(
+    image: 'images/xei.png',
     modelo: "Corolla",
     cor: Colors.white,
     placa: "WYZ-023",
@@ -42,6 +43,7 @@ final List<Vehicle> vehicleList = [
     alugado: true,
   ),
   Vehicle(
+    image: 'images/civic.png',
     modelo: "Civic",
     cor: Colors.yellow,
     placa: "DGH-283",
@@ -58,6 +60,7 @@ final List<Vehicle> vehicleList = [
     alugado: true,
   ),
   Vehicle(
+    image: 'images/xei.png',
     modelo: "Santana",
     cor: Colors.redAccent,
     placa: "321-DDA",
@@ -74,6 +77,7 @@ final List<Vehicle> vehicleList = [
     alugado: true,
   ),
   Vehicle(
+    image: 'images/s10.png',
     modelo: "S-10",
     cor: Colors.redAccent,
     placa: "S10-BVC",
@@ -90,6 +94,7 @@ final List<Vehicle> vehicleList = [
     alugado: true,
   ),
   Vehicle(
+    image: 'images/l200.png',
     modelo: "L200",
     cor: Colors.redAccent,
     placa: "L20-BBB",

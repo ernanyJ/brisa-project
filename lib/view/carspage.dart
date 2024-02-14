@@ -1,5 +1,5 @@
 import 'package:brisa_project/controllers/CarsController.dart';
-import 'package:brisa_project/models/vehicle.dart';
+
 import 'package:brisa_project/widgets/CarCardWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -185,7 +185,8 @@ class DriversList extends StatelessWidget {
             childAspectRatio: 2 / 3,
           ),
           itemBuilder: (context, index) {
-            return CarCard(vehicle: vehicleList[index]);
+            return CarCard.withImage(
+                vehicleList[index], vehicleList[index].image);
           }),
     );
   }

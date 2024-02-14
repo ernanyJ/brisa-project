@@ -15,7 +15,7 @@ class Homepage extends StatelessWidget {
         children: [
           SideBar(),
           Expanded(
-              flex: 32,
+              flex: 22,
               child: Obx(() => vcontroller.pages[vcontroller.count.value])),
         ],
       ),
@@ -38,7 +38,7 @@ class Homepage extends StatelessWidget {
                   onTap: () => vcontroller.count.value = 0,
                   selected: vcontroller.count.value == 0,
                   contentPadding:
-                      const EdgeInsets.only(left: 15, top: 10, bottom: 10),
+                      const EdgeInsets.only(left: 25, top: 10, bottom: 10),
                   leading: const Icon(Icons.home, size: 30),
                 ),
               ),
@@ -49,7 +49,7 @@ class Homepage extends StatelessWidget {
                   onTap: () => vcontroller.count.value = 1,
                   selected: vcontroller.count.value == 1,
                   contentPadding:
-                      const EdgeInsets.only(left: 15, top: 10, bottom: 10),
+                      const EdgeInsets.only(left: 25, top: 10, bottom: 10),
                   leading: const Icon(
                     Icons.drive_eta,
                     size: 30,
@@ -63,7 +63,7 @@ class Homepage extends StatelessWidget {
                   onTap: () => vcontroller.count.value = 2,
                   selected: vcontroller.count.value == 2,
                   contentPadding:
-                      const EdgeInsets.only(left: 15, top: 10, bottom: 10),
+                      const EdgeInsets.only(left: 25, top: 10, bottom: 10),
                   leading: const Icon(
                     Icons.person_2_rounded,
                     size: 30,
@@ -77,7 +77,7 @@ class Homepage extends StatelessWidget {
                   onTap: () => vcontroller.count.value = 0,
                   selected: vcontroller.count.value == 3,
                   contentPadding:
-                      const EdgeInsets.only(left: 15, top: 10, bottom: 10),
+                      const EdgeInsets.only(left: 25, top: 10, bottom: 10),
                   leading: const Icon(
                     Icons.build_sharp,
                     size: 30,
