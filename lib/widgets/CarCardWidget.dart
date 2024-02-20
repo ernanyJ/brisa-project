@@ -1,8 +1,10 @@
 import 'package:brisa_project/models/vehicle.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CarCard extends StatelessWidget {
+  void setImageScale() {}
   Vehicle vehicle;
   late String image;
 
@@ -18,26 +20,24 @@ class CarCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
         color: const Color.fromARGB(242, 255, 255, 255),
       ),
-      child: Stack(
+      child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: const Color.fromARGB(255, 218, 218, 218),
-              ),
-              margin: const EdgeInsets.only(left: 92, top: 10),
-              child: Image.asset(
-                image,
-              ),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Stack(
             children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Color(vehicle.cor.value),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
+                child: Image.asset(image, scale: 1.3),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 140, left: 10),
                 child: Text(
                   vehicle.modelo,
                   style: GoogleFonts.roboto(
@@ -47,13 +47,23 @@ class CarCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+              Container(
+                margin: const EdgeInsets.only(top: 165, left: 10),
                 child: Text(
                   "Placa: ${vehicle.placa}",
                   style: GoogleFonts.roboto(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10, top: 5),
+                child: Text(
+                  "Cor:",
+                  style: GoogleFonts.roboto(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
