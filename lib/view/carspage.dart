@@ -137,16 +137,6 @@ class CarsPage extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              margin: EdgeInsets.only(left: screenWidth - 320, bottom: 8),
-              child: ElevatedButton.icon(
-                icon: Icon(Icons.add),
-                onPressed: () {
-                  // comando
-                },
-                label: Text("Adicionar veículo"),
-              ),
-            ),
 
             // CARD THAT DISPLAYS THE LIST OF DRIVERS
             DriversList(screenWidth: screenWidth, screenHeigth: screenHeigth),
@@ -182,7 +172,7 @@ class DriversList extends StatelessWidget {
             crossAxisCount: 7,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 2 / 3,
+            childAspectRatio: 3 / 4,
           ),
           itemBuilder: (context, index) {
             return CarCard.withImage(

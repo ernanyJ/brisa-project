@@ -14,62 +14,87 @@ class CarCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        color: const Color.fromARGB(242, 255, 255, 255),
-      ),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Color(vehicle.cor.value),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(image, scale: 1.3),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 140, left: 10),
-                child: Text(
-                  vehicle.modelo,
-                  style: GoogleFonts.roboto(
-                    textStyle: Theme.of(context).textTheme.displayLarge,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
+    var scale = 1.3.obs;
+    return Obx(
+      () => Container(
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: const Color.fromARGB(242, 255, 255, 255),
+        ),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Color(vehicle.cor.value),
                   ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 165, left: 10),
-                child: Text(
-                  "Placa: ${vehicle.placa}",
-                  style: GoogleFonts.roboto(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
+                MouseRegion(
+                  onEnter: (_) {
+                    scale.value = 1.2;
+                  },
+                  onExit: (_) {
+                    scale.value = 1.3;
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(image, scale: scale.value),
                   ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 10, top: 5),
-                child: Text(
-                  "Cor:",
-                  style: GoogleFonts.roboto(
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
+                Row(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 140, left: 10),
+                      child: Text(
+                        vehicle.modelo,
+                        style: GoogleFonts.roboto(
+                          textStyle: Theme.of(context).textTheme.displayLarge,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: vehicle.disponivel
+                            ? const Color.fromARGB(255, 44, 172, 48)
+                            : const Color.fromARGB(255, 224, 81, 71),
+                      ),
+                      margin: const EdgeInsets.only(top: 140, left: 10),
+                      width: 10,
+                      height: 10,
+                    )
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 165, left: 10),
+                  child: Text(
+                    "Placa: ${vehicle.placa}",
+                    style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+                Container(
+                  margin: const EdgeInsets.only(left: 10, top: 5),
+                  child: Text(
+                    "Cor:",
+                    style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
