@@ -1,3 +1,4 @@
+import 'package:brisa_project/constants/CarsColors.dart';
 import 'package:brisa_project/models/vehicle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,14 +28,24 @@ class CarCard extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
                   width: MediaQuery.of(context).size.width,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Color(vehicle.cor.value),
+                  height: scale.value == 1.3 ? 1 * 110 : 1 * 120,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 209, 209, 209),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(143, 73, 73, 73),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
                   ),
                 ),
                 MouseRegion(
+                  cursor: SystemMouseCursors.click,
                   onEnter: (_) {
                     scale.value = 1.2;
                   },
@@ -82,16 +93,6 @@ class CarCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 10, top: 5),
-                  child: Text(
-                    "Cor:",
-                    style: GoogleFonts.roboto(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
               ],
             ),
             Container(
@@ -108,11 +109,19 @@ class CarCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 3),
               child: LinearPercentIndicator(
+                barRadius: const Radius.circular(5),
+                center: const Text(
+                  "20 %",
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontWeight: FontWeight.bold),
+                ),
                 animation: true,
                 lineHeight: 15.0,
                 percent: 0.2,
-                progressColor: Colors.deepPurple,
-                backgroundColor: Color.fromARGB(221, 185, 157, 233),
+                progressColor: const Color.fromARGB(255, 38, 202, 66),
+                backgroundColor: const Color.fromARGB(255, 51, 73, 55),
               ),
             ),
           ],
