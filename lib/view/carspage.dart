@@ -172,7 +172,7 @@ class DriversList extends StatelessWidget {
             crossAxisCount: 7,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 3 / 4,
+            childAspectRatio: 7 / 8,
           ),
           itemBuilder: (context, index) {
             return CarCard.withImage(

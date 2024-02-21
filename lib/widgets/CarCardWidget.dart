@@ -95,27 +95,46 @@ class CarCard extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.only(top: 10, left: 10),
-              child: Text(
-                "Combustível:",
-                style: GoogleFonts.roboto(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0, left: 10),
+                  child: Text(
+                    "Cor do veículo:",
+                    style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0, left: 5),
+                  child: Text(
+                    "${returnColor(vehicle.cor)}",
+                    style: GoogleFonts.roboto(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 3),
-              child: LinearPercentIndicator(
+            const SizedBox(height: 10.0),
+            Stack(children: [
+              LinearPercentIndicator(
                 barRadius: const Radius.circular(5),
                 center: const Text(
-                  "20 %",
+                  "Combustível: 20 %",
                   style: TextStyle(
                       fontSize: 12,
                       color: Color.fromARGB(255, 255, 255, 255),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      shadows: <Shadow>[
+                        Shadow(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            offset: Offset(1, 1),
+                            blurRadius: 2.0)
+                      ]),
                 ),
                 animation: true,
                 lineHeight: 15.0,
@@ -123,10 +142,16 @@ class CarCard extends StatelessWidget {
                 progressColor: const Color.fromARGB(255, 38, 202, 66),
                 backgroundColor: const Color.fromARGB(255, 51, 73, 55),
               ),
-            ),
+            ]),
           ],
         ),
       ),
     );
+  }
+
+  static returnColor(Color color) {
+    if (color == const Color.fromARGB(255, 236, 77, 65)) return "Vermelho";
+    if (color == const Color.fromARGB(255, 236, 236, 236)) return "Branco";
+    if (color == const Color.fromARGB(255, 19, 19, 19)) return "Preto";
   }
 }
