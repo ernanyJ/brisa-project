@@ -2,6 +2,7 @@ import 'package:brisa_project/models/vehicle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class CarCard extends StatelessWidget {
   void setImageScale() {}
@@ -92,6 +93,27 @@ class CarCard extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: const EdgeInsets.only(top: 10, left: 10),
+              child: Text(
+                "Combustível:",
+                style: GoogleFonts.roboto(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 3),
+              child: LinearPercentIndicator(
+                animation: true,
+                lineHeight: 15.0,
+                percent: 0.2,
+                progressColor: Colors.deepPurple,
+                backgroundColor: Color.fromARGB(221, 185, 157, 233),
+              ),
             ),
           ],
         ),
