@@ -21,7 +21,7 @@ class CarCard extends StatelessWidget {
       () => Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(20),
           color: const Color.fromARGB(242, 255, 255, 255),
         ),
         child: Column(
@@ -90,30 +90,6 @@ class CarCard extends StatelessWidget {
                     style: GoogleFonts.roboto(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 10),
-                  child: Text(
-                    "Cor do veículo:",
-                    style: GoogleFonts.roboto(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 5),
-                  child: Text(
-                    "${returnColor(vehicle.cor)}",
-                    style: GoogleFonts.roboto(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

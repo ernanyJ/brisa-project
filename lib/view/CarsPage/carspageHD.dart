@@ -1,3 +1,4 @@
+import 'package:brisa_project/constants/CarsColors.dart';
 import 'package:brisa_project/controllers/CarsController.dart';
 
 import 'package:brisa_project/widgets/CarCardWidget.dart';
@@ -5,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CarsPage extends StatelessWidget {
-  const CarsPage({super.key});
+class CarsPageHD extends StatelessWidget {
+  const CarsPageHD({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,10 @@ class CarsPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Text(
+              "${MediaQuery.of(context).size.width}",
+              style: const TextStyle(color: colorWhite, fontSize: 20),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -37,7 +42,7 @@ class CarsPage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "ATIVOS",
+                            "PEQUENO",
                             style: GoogleFonts.roboto(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -111,30 +116,6 @@ class CarsPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(174, 0, 0, 0),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    margin: const EdgeInsets.only(bottom: 150),
-                    width: 300,
-                    height: 150,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(174, 0, 0, 0),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    margin: const EdgeInsets.only(bottom: 150),
-                    width: 300,
-                    height: 150,
-                  ),
-                ),
               ],
             ),
 
@@ -172,7 +153,7 @@ class DriversList extends StatelessWidget {
             crossAxisCount: 7,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 7 / 8,
+            childAspectRatio: 5 / 8,
           ),
           itemBuilder: (context, index) {
             return CarCard.withImage(
