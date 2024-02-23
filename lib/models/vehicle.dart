@@ -9,6 +9,7 @@ class Vehicle {
   int anoDeFabricacao;
   double rendimentokm;
   String tipoCombustivel;
+  double litrosCombustivel;
   double capacidadeCombustivel;
   double quilometragem;
   bool disponivel;
@@ -16,6 +17,10 @@ class Vehicle {
   bool precisaManutencao;
   bool temSeguro;
   bool alugado;
+
+  int getFuelPercentage(double capacidade, double combustivelAtual) {
+    return ((combustivelAtual / capacidade) * 100).round();
+  }
 
   Vehicle({
     required this.image,
@@ -26,6 +31,7 @@ class Vehicle {
     required this.anoDeFabricacao,
     required this.rendimentokm,
     required this.tipoCombustivel,
+    required this.litrosCombustivel,
     required this.capacidadeCombustivel,
     required this.quilometragem,
     required this.disponivel,

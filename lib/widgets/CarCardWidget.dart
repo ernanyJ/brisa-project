@@ -99,9 +99,9 @@ class CarCard extends StatelessWidget {
             Stack(children: [
               LinearPercentIndicator(
                 barRadius: const Radius.circular(5),
-                center: const Text(
-                  "Combustível: 20 %",
-                  style: TextStyle(
+                center: Text(
+                  "Combustível: ${vehicle.getFuelPercentage(vehicle.capacidadeCombustivel, vehicle.litrosCombustivel)} %",
+                  style: const TextStyle(
                       fontSize: 12,
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.bold,
@@ -114,7 +114,10 @@ class CarCard extends StatelessWidget {
                 ),
                 animation: true,
                 lineHeight: 15.0,
-                percent: 0.2,
+                percent: (vehicle.getFuelPercentage(
+                        vehicle.capacidadeCombustivel,
+                        vehicle.litrosCombustivel) *
+                    0.01), //  * - 0,01
                 progressColor: const Color.fromARGB(255, 38, 202, 66),
                 backgroundColor: const Color.fromARGB(255, 51, 73, 55),
               ),
