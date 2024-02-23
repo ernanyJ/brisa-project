@@ -27,7 +27,7 @@ class CarsPageFHD extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.only(top: 30.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(174, 0, 0, 0),
@@ -72,7 +72,7 @@ class CarsPageFHD extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.only(top: 30.0, left: 50),
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(174, 0, 0, 0),
@@ -114,30 +114,6 @@ class CarsPageFHD extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(174, 0, 0, 0),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    margin: const EdgeInsets.only(bottom: 150),
-                    width: 300,
-                    height: 150,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(174, 0, 0, 0),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    margin: const EdgeInsets.only(bottom: 150),
-                    width: 300,
-                    height: 150,
                   ),
                 ),
               ],

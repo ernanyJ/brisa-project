@@ -6,7 +6,6 @@ Expanded SideBarFHD() {
   var hoverColor = const Color.fromARGB(115, 105, 120, 202);
 
   return Expanded(
-    flex: 1,
     child: Obx(
       () => Material(
         child: ListView(
@@ -17,6 +16,8 @@ Expanded SideBarFHD() {
                 hoverColor: hoverColor,
                 onTap: () => vcontroller.count.value = 0,
                 selected: vcontroller.count.value == 0,
+                contentPadding:
+                    const EdgeInsets.only(left: 25, top: 10, bottom: 10),
                 leading: const Icon(Icons.home, size: 30),
               ),
             ),

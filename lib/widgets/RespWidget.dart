@@ -11,7 +11,7 @@ class ResponsiveWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth > 1800) {
+      if (constraints.maxWidth > 1500) {
         return FHD;
       } else {
         return HD;
