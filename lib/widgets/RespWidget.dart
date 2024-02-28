@@ -1,5 +1,3 @@
-import 'package:brisa_project/view/CarsPage/carspageFHD.dart';
-import 'package:brisa_project/view/driverspage.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveWidget extends StatelessWidget {

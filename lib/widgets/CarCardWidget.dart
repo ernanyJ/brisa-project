@@ -1,4 +1,3 @@
-import 'package:brisa_project/constants/CarsColors.dart';
 import 'package:brisa_project/models/vehicle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

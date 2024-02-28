@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../constants/ThemeColors.dart';
+
 class CarsPageHD extends StatelessWidget {
   const CarsPageHD({super.key});
 
@@ -15,7 +17,7 @@ class CarsPageHD extends StatelessWidget {
     final screenWidth = (MediaQuery.of(context).size.width);
     return SingleChildScrollView(
       child: Container(
-        color: const Color.fromARGB(255, 40, 16, 78),
+        color: themeBackground,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -104,7 +106,7 @@ class CarsPageHD extends StatelessWidget {
                               padding: const EdgeInsets.all(20.0),
                               child: Obx(
                                 () => Text(
-                                  "${CarsController().getOcuppiedCars()}",
+                                  "${CarsController().getBusyCars()}",
                                   style: GoogleFonts.roboto(
                                       fontSize: 40,
                                       fontWeight: FontWeight.bold,

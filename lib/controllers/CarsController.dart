@@ -1,6 +1,5 @@
 import 'package:brisa_project/constants/CarsColors.dart';
 import 'package:brisa_project/models/vehicle.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CarsController {
@@ -14,7 +13,7 @@ class CarsController {
     return available.value;
   }
 
-  int getOcuppiedCars() {
+  int getBusyCars() {
     var ocuppied = 0.obs;
     vehicleList.forEach((car) {
       if (!car.disponivel) {

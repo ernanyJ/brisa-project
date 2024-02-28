@@ -22,6 +22,11 @@ class Vehicle {
     return ((combustivelAtual / capacidade) * 100).round();
   }
 
+  void fuelNeeder() {
+    if (getFuelPercentage(capacidadeCombustivel, litrosCombustivel) <
+        20.0) precisaAbastecer = true;
+  }
+
   Vehicle({
     required this.image,
     required this.modelo,
