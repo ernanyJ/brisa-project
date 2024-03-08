@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:brisa_project/constants/CarsColors.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class DriversPageFHD extends StatelessWidget {
@@ -9,10 +10,10 @@ class DriversPageFHD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text("${MediaQuery.of(context).size.width}"),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               margin: const EdgeInsets.only(top: 25),
@@ -33,24 +34,28 @@ class DriversPageFHD extends StatelessWidget {
                     fit: BoxFit.fill,
                     child: Row(
                       children: [
+                        const SizedBox(width: 10),
                         bottomInfoCard(
                           context,
                           const Color.fromARGB(255, 255, 193, 120),
                           null,
                           const Color.fromARGB(255, 255, 31, 0),
                         ),
+                        const SizedBox(width: 30),
                         bottomInfoCard(
                           context,
                           const Color.fromARGB(255, 255, 0, 184),
                           null,
                           const Color.fromARGB(255, 78, 58, 118),
-                        )
+                        ),
+                        const SizedBox(width: 22),
                       ],
                     ),
                   )
                 ],
               ),
             ),
+            //
             const SizedBox(width: 50),
             Container(
               margin: const EdgeInsets.only(top: 25),
@@ -77,12 +82,14 @@ class DriversPageFHD extends StatelessWidget {
                           null,
                           const Color.fromARGB(255, 25, 192, 61),
                         ),
+                        const SizedBox(width: 20),
                         bottomInfoCard(
                           context,
-                          Color.fromARGB(255, 47, 144, 255),
-                          Color.fromARGB(255, 12, 74, 146),
-                          Color.fromARGB(255, 16, 24, 139),
-                        )
+                          const Color.fromARGB(255, 47, 144, 255),
+                          const Color.fromARGB(255, 12, 74, 146),
+                          const Color.fromARGB(255, 16, 24, 139),
+                        ),
+                        const SizedBox(width: 20),
                       ],
                     ),
                   )
@@ -132,6 +139,7 @@ class DriversPageFHD extends StatelessWidget {
             Text(
               text,
               style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(height: 0.1),
                   color: Colors.white,
                   fontWeight: FontWeight.normal,
                   fontSize: 18,
@@ -159,10 +167,9 @@ class DriversPageFHD extends StatelessWidget {
   }
 }
 
-Container bottomInfoCard(context, Color color1, Color? medium,Color color2) {
+Container bottomInfoCard(context, Color color1, Color? medium, Color color2) {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.red,
       borderRadius: BorderRadius.circular(20),
       gradient: LinearGradient(
         colors: [
@@ -174,5 +181,55 @@ Container bottomInfoCard(context, Color color1, Color? medium,Color color2) {
     margin: const EdgeInsets.only(top: 20, left: 20),
     height: 139.47,
     width: MediaQuery.of(context).size.width * 0.190,
+    child: FittedBox(
+      fit: BoxFit.fitWidth,
+      child: Row(
+        children: [
+          const Column(
+            children: [
+              Icon(
+                Icons.car_repair_sharp,
+                size: 85,
+                color: Colors.white,
+              ),
+              SizedBox(height: 40),
+            ],
+          ),
+          Column(
+            children: [
+              Text(
+                "Veículos\np/ Manutenção",
+                style: GoogleFonts.openSans(
+                  textStyle: const TextStyle(height: 0.9),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
+              ),
+              const SizedBox(height: 50),
+            ],
+          ),
+          const SizedBox(
+            width: 40,
+          ),
+          const Column(
+            children: [
+              SizedBox(height: 70),
+              Text(
+                "2",
+                style: TextStyle(
+                  color: colorWhite,
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+    ),
   );
 }
