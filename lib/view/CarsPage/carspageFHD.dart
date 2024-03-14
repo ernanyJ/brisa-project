@@ -159,7 +159,7 @@ class DriversList extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             return CarCard.withImage(
-                vehicleList[index], vehicleList[index].image);
+                vehicleList[index], vehicleList[index].image.toString());
           }),
     );
   }

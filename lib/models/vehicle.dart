@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Vehicle {
-  String image;
+  Image image;
   String modelo;
   Color cor;
   String placa;
@@ -23,8 +24,8 @@ class Vehicle {
   }
 
   void fuelNeeder() {
-    if (getFuelPercentage(capacidadeCombustivel, litrosCombustivel) <
-        20.0) precisaAbastecer = true;
+    if (getFuelPercentage(capacidadeCombustivel, litrosCombustivel) < 20.0)
+      precisaAbastecer = true;
   }
 
   Vehicle({
