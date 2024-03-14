@@ -18,64 +18,7 @@ class ContentHandler extends StatelessWidget {
         return Text("test2");
       default:
         return ListView(
-          children: [
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-            CarTile(context, null, "Teste"),
-            const SizedBox(
-              height: 5,
-            ),
-          ],
+          children: [],
         );
     }
   }
