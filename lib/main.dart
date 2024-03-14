@@ -1,3 +1,4 @@
+import 'package:brisa_project/view/Overview/Overview.dart';
 import 'package:brisa_project/widgets/Layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "Brisa-Project",
       debugShowCheckedModeBanner: false,
-      home: Layout(),
+      home: Overview(),
     );
   }
 }

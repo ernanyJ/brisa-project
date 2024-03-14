@@ -14,7 +14,7 @@ class Vcontroller extends GetxController {
       FHD: CarsPageFHD(),
       HD: CarsPageHD(),
     ),
-    DriversPageFHD()
+    Overview()
   ];
 
   int printIndex() {

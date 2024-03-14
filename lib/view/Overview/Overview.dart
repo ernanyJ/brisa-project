@@ -1,105 +1,204 @@
 import 'package:brisa_project/constants/CarsColors.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class DriversPageFHD extends StatelessWidget {
-  const DriversPageFHD({super.key});
+class Overview extends StatelessWidget {
+  const Overview({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("${MediaQuery.of(context).size.width}"),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 25),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InfoCard(
-                      context,
-                      const Icon(
-                        Icons.drive_eta,
-                        size: 35,
-                        color: Colors.white,
+    var isPressed = false.obs;
+    return Scaffold(
+        body: Obx(
+      () => Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 25),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InfoCard(
+                        context,
+                        const Icon(
+                          Icons.drive_eta,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                        "Veículos\ndisponíveis",
+                        5),
+                    FittedBox(
+                      fit: BoxFit.fill,
+                      child: Row(
+                        children: [
+                          const SizedBox(width: 10),
+                          bottomInfoCard(
+                            context,
+                            const Color.fromARGB(255, 255, 193, 120),
+                            null,
+                            const Color.fromARGB(255, 255, 31, 0),
+                          ),
+                          const SizedBox(width: 30),
+                          bottomInfoCard(
+                            context,
+                            const Color.fromARGB(255, 255, 0, 184),
+                            null,
+                            const Color.fromARGB(255, 78, 58, 118),
+                          ),
+                          const SizedBox(width: 22),
+                        ],
                       ),
-                      "Veículos\ndisponíveis",
-                      5),
-                  FittedBox(
-                    fit: BoxFit.fill,
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 10),
-                        bottomInfoCard(
-                          context,
-                          const Color.fromARGB(255, 255, 193, 120),
-                          null,
-                          const Color.fromARGB(255, 255, 31, 0),
-                        ),
-                        const SizedBox(width: 30),
-                        bottomInfoCard(
-                          context,
-                          const Color.fromARGB(255, 255, 0, 184),
-                          null,
-                          const Color.fromARGB(255, 78, 58, 118),
-                        ),
-                        const SizedBox(width: 22),
-                      ],
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
-            //
-            const SizedBox(width: 50),
-            Container(
-              margin: const EdgeInsets.only(top: 25),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InfoCard(
-                      context,
-                      const Icon(
-                        Icons.person,
-                        size: 35,
-                        color: Colors.white,
+              //
+              const SizedBox(width: 50),
+              Container(
+                margin: const EdgeInsets.only(top: 25),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InfoCard(
+                        context,
+                        const Icon(
+                          Icons.person,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                        "Motoristas\ndisponíveis",
+                        5),
+                    FittedBox(
+                      fit: BoxFit.fill,
+                      child: Row(
+                        children: [
+                          bottomInfoCard(
+                            context,
+                            const Color.fromARGB(255, 3, 111, 33),
+                            null,
+                            const Color.fromARGB(255, 25, 192, 61),
+                          ),
+                          const SizedBox(width: 20),
+                          bottomInfoCard(
+                            context,
+                            const Color.fromARGB(255, 201, 137, 0),
+                            const Color.fromARGB(255, 196, 137, 11),
+                            const Color.fromARGB(255, 218, 174, 33),
+                          ),
+                          const SizedBox(width: 20),
+                        ],
                       ),
-                      "Motoristas\ndisponíveis",
-                      5),
-                  FittedBox(
-                    fit: BoxFit.fill,
-                    child: Row(
-                      children: [
-                        bottomInfoCard(
-                          context,
-                          const Color.fromARGB(255, 3, 111, 33),
-                          null,
-                          const Color.fromARGB(255, 25, 192, 61),
-                        ),
-                        const SizedBox(width: 20),
-                        bottomInfoCard(
-                          context,
-                          const Color.fromARGB(255, 47, 144, 255),
-                          const Color.fromARGB(255, 12, 74, 146),
-                          const Color.fromARGB(255, 16, 24, 139),
-                        ),
-                        const SizedBox(width: 20),
-                      ],
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
+            ],
+          ),
+
+          // Show infos
+
+          const SizedBox(height: 30),
+
+          Container(
+            decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 223, 223, 223),
+                borderRadius: BorderRadius.circular(10)),
+            width: MediaQuery.of(context).size.width - 200,
+            height: MediaQuery.of(context).size.height - 304,
+            child: ListView(
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 42, 111, 231),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10))),
+                  height: 70,
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          isPressed.value = !isPressed.value;
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: isPressed.value
+                                ? const Color.fromARGB(255, 38, 66, 116)
+                                : const Color.fromARGB(255, 42, 111, 231),
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(10)),
+                          ),
+                          height: MediaQuery.of(context).size.height,
+                          width: 200,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Veículos",
+                              style: GoogleFonts.openSans(
+                                textStyle: const TextStyle(height: 0.9),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(0, 50, 75, 117),
+                        ),
+                        height: MediaQuery.of(context).size.height,
+                        width: 200,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Motoristas",
+                            style: GoogleFonts.openSans(
+                              textStyle: const TextStyle(height: 0.9),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        color: const Color.fromARGB(0, 50, 75, 117),
+                        height: MediaQuery.of(context).size.height,
+                        width: 200,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Viagens",
+                            style: GoogleFonts.openSans(
+                              textStyle: const TextStyle(height: 0.9),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ],
-    );
+          ),
+        ],
+      ),
+    ));
   }
 
   Container InfoCard(context, Icon icon, String text, int number) {
@@ -177,6 +276,14 @@ Container bottomInfoCard(context, Color color1, Color? medium, Color color2) {
           color2,
         ],
       ),
+      boxShadow: const [
+        BoxShadow(
+          color: Color.fromARGB(73, 0, 0, 0),
+          spreadRadius: 2,
+          blurRadius: 3,
+          offset: Offset(0, 2), // changes position of shadow
+        ),
+      ],
     ),
     margin: const EdgeInsets.only(top: 20, left: 20),
     height: 139.47,
